@@ -1,5 +1,5 @@
 :root {
-  --bg-warm: #fbf9f6;
+  --bg-warm: #faf8f5;
   --bg-white: #ffffff;
   --primary-amber: #b46528;
   --primary-hover: #924e1a;
@@ -349,6 +349,11 @@ a.card {
   justify-content: center;
 }
 
+.thumbnail-wrapper.light {
+  background: var(--image) center / contain no-repeat;
+  background-color: var(--bg-warm);
+}
+
 .thumbnail-label {
   position: absolute;
   bottom: 12px;
@@ -384,7 +389,7 @@ a.card {
 }
 
 .video-info {
-  padding: 1.25rem;
+  padding: 0.75rem 1rem;
 }
 
 .media-source {
@@ -398,7 +403,7 @@ a.card {
 .video-info h3 {
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 1.1rem;
-  margin: 0.4rem 0;
+  margin: 0.1rem 0;
 }
 
 .video-info p {
@@ -414,7 +419,7 @@ a.card {
 
 .event-card {
   background: var(--bg-warm);
-  padding: 1.75rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 10px;
   border: 1px solid var(--border-light);
   border-left: 4px solid var(--horizon-blue);
@@ -442,9 +447,8 @@ a.card {
   background: linear-gradient(135deg, var(--horizon-blue), #1e2c3d);
   color: #fff;
   border-radius: 16px;
-  padding: 3.5rem 2rem;
+  padding: 3.5rem 1.5rem;
   text-align: center;
-  max-width: 920px;
   margin: 0 auto;
 }
 
@@ -466,6 +470,7 @@ a.card {
   background: #fff3d81c;
   padding: 10px 15px 10px 10px;
   border-left: 4px solid #b46528;
+  border-radius: 5px;
 }
 
 .modal {
@@ -552,5 +557,29 @@ footer {
   .author-photo {
     max-width: 220px;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .buy-banner {
+    padding: 3.5rem 1.2rem;
+  }
+}
+
+@media (max-width: 348px) {
+  section {
+    padding: 4.5rem 0.8rem;
+  }
+}
+
+@media (max-width: 330px) {
+  section {
+    padding: 4.5rem 0.4rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .buy-banner {
+    padding: 3.5rem 0.5rem;
   }
 }
