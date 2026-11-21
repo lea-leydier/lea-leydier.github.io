@@ -21,7 +21,7 @@
   <link rel="canonical" href="https://lea-leydier.github.io/">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
-  <link rel="stylesheet" href="styles.css?v=1.5">
+  <link rel="stylesheet" href="styles.css?v=1.6">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,7 +52,7 @@
   <header>
     <nav class="navbar">
       <a href="#" class="logo">L'IMMIGRÉ <span>Modou-Modou</span></a>
-      <button class="burger" id="burgerBtn" aria-label="Menu">☰</button>
+      <button class="burger" id="burgerBtn" aria-controls="navLinks" aria-expanded="false" aria-label="Menu">☰</button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#livre">Le Livre</a></li>
         <li><a href="#auteure">L'Auteure</a></li>
@@ -366,20 +366,7 @@
         <h3 class="sep">• En France :</h3>
         
         <div class="events-grid">
-          <div class="event-card">
-            <div class="event-date">Prochainement en rayon</div>
-            <h3>Librairie (à venir)</h3>
-            <p class="event-location">📍 Adresse à venir</p>
-            <p>Ouvrage disponible prochainement.</p>
-          </div>
-
-          <div class="event-card">
-            <div class="event-date">Prochainement en rayon</div>
-            <h3>Librairie (à venir)</h3>
-            <p class="event-location">📍 Adresse à venir</p>
-            <p>Ouvrage disponible prochainement.</p>
-          </div>
-
+        
           <div class="event-card">
             <div class="event-date">Prochainement en rayon</div>
             <h3>Librairie (à venir)</h3>
@@ -419,8 +406,42 @@
     const navLinks = document.getElementById('navLinks');
 
     burgerBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+      const isOpen = navLinks.classList.toggle('active');
+      burgerBtn.setAttribute('aria-expanded', isOpen);
+      burgerBtn.textContent = isOpen ? '✕' : '☰';
     });
+    
+    function closeMenu() {
+      navLinks.classList.remove('active');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+      burgerBtn.textContent = '☰';
+    }
+    
+    document.addEventListener('click', (event) => {
+      if (!navLinks.contains(event.target) && !burgerBtn.contains(event.target)) {
+        closeMenu();
+      }
+    });
+    
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        closeMenu();
+      }
+    });
+    
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+    
+    let resizeTimer;
+
+    window.addEventListener('resize', () => {
+      document.body.classList.add('resize-animation-stopper');
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+          document.body.classList.remove('resize-animation-stopper');
+        }, 400);
+      });
 
     const modal = document.getElementById('videoModal');
     const videoFrame = document.getElementById('videoFrame');
