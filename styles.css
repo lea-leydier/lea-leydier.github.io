@@ -94,6 +94,17 @@ header {
   color: var(--primary-amber);
 }
 
+a.ext-link {
+  color: var(--primary-amber);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+ a.ext-link:hover {
+  color: var(--primary-hover);
+}
+
 .nav-cta {
   background: var(--primary-amber);
   color: #fff !important;
