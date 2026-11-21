@@ -21,7 +21,7 @@
   <link rel="canonical" href="https://lea-leydier.github.io/">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
-  <link rel="stylesheet" href="styles.css?v=1.8">
+  <link rel="stylesheet" href="styles.css?v=1.9">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -437,7 +437,7 @@
           <hr />
           <p>• Bientôt disponible au Sénégal au tarif de <strong>10 000 CFA</strong> sur la librairie en ligne <b>Moukat distribution</b>.</p>
           
-          <a title="Bientôt disponible" href="#" onclick="alert('Bientôt disponible'); return false;" target="_blank" rel="noopener" class="btn-primary btn-buy">
+          <a title="Bientôt disponible" href="#" onclick="showModal('Bientôt disponible'); return false;" target="_blank" rel="noopener" class="btn-primary btn-buy">
             <svg xmlns="http://w3.org" viewBox="0 0 3 2" width="20" height="14" aria-hidden="true">
   <rect width="1" height="2" x="0" fill="#00853f" />
   <rect width="1" height="2" x="1" fill="#fdef42" />
@@ -453,6 +453,11 @@
   <footer>
     <p>&copy; 2026 Léa Leydier — <em>L'IMMIGRÉ Modou-Modou</em> (ISBN : 979-10-451-0407-5). Tous droits réservés.</p>
   </footer>
+  
+  <dialog id="info-modal">
+    <p id="modal-text"></p>
+    <button onclick="this.closest('dialog').close()">OK</button>
+  </dialog>
 
   <div class="modal" id="videoModal" onclick="closeVideo(event)">
     <div class="modal-content">
@@ -522,6 +527,17 @@
         videoFrame.src = "";
       }
     }
+    
+    function showModal(text) {
+      document.getElementById('modal-text').textContent = text;
+      document.getElementById('info-modal').showModal();
+    }
+    
+    document.getElementById('info-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.close();
+      }
+    });
   </script>
 
 </body>

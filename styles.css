@@ -549,6 +549,7 @@ a.card {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+  backdrop-filter: blur(2px);
 }
 
 .modal.open {
@@ -574,6 +575,40 @@ a.card {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+#info-modal {
+  margin: max(10px, calc((100vh - 120px) * 0.38)) auto auto;
+  border: none;
+  border-radius: 8px;
+  padding: 20px 24px;
+  min-width: 300px;
+  max-width: 90vw;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center; font-family: sans-serif;
+}
+
+#info-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(2px);
+}
+
+#info-modal p {
+  margin: 0 0 16px;
+  font-size: 16px;
+}
+
+#info-modal button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: var(--primary-amber);
+  color: #fff;
+  cursor: pointer;
+}
+
+#info-modal button:hover {
+  background: var(--primary-hover);
 }
 
 footer {
