@@ -534,7 +534,8 @@ a.card {
 .buy-banner hr {
   margin: 40px auto 30px;
   width: 90%;
-  color: #eeeeee20;
+  color: #eeeeee25;
+  border-color: #eeeeee25;
   border-bottom: none;
   height: 1px;
 }
