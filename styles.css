@@ -471,7 +471,7 @@ a.card {
 
 .buy-banner h2 {
   color: #fff;
-  font-size: font-size: clamp(1.6rem, 4vw, 2.1rem);
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
   margin-bottom: 1rem;
 }
 
