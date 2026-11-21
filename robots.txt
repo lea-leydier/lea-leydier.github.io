@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lea-leydier.github.io/sitemap.xml
