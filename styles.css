@@ -523,6 +523,12 @@ footer {
   border-top: 1px solid var(--border-light);
 }
 
+@media (max-width: 990px) {
+  .nav-links {
+    gap: 1.4rem;
+  }
+}
+
 @media (max-width: 950px) {
   .burger {
     display: block;
