@@ -402,7 +402,7 @@ a.card {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--horizon-blue);
+  color: var(--primary-amber);
   font-weight: 700;
 }
 
@@ -443,10 +443,15 @@ a.card {
   margin-bottom: 0.5rem;
 }
 
+.event-card p:not(.event-location) {
+  color:var(--horizon-blue);
+  font-size: 0.9em;
+}
+
 .event-location {
   color: var(--text-muted);
   font-size: 0.95rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .buy-banner {
