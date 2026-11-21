@@ -6,6 +6,8 @@
   --primary-buy: #b42f28;
   --primary-buyhover: #92201a;
   --horizon-blue: #2f435a;
+  --horizon-bluelight: #4e6987;
+  --horizon-bluelight95: #4e698795;
   --horizon-light: #e8eef4;
   --text-dark: #2c241e;
   --text-muted: #574e46;
@@ -347,12 +349,16 @@ a.card {
   position: relative;
   aspect-ratio: 16 / 9;
   --image: none;
-  background: var(--image) center / contain no-repeat, linear-gradient(135deg, var(--horizon-blue), #4e6987);
+  background: var(--image) center / contain no-repeat, linear-gradient(135deg, var(--horizon-blue), var(--horizon-bluelight));
   cursor: pointer;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.thumbnail-wrapper.cover {
+  background: var(--image) center / cover no-repeat, linear-gradient(135deg, var(--horizon-blue), var(--horizon-bluelight));
 }
 
 .thumbnail-wrapper.light {
@@ -367,7 +373,7 @@ a.card {
   color: rgba(255,255,255,1);
   font-size: 0.8rem;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--horizon-blue), #4e698795);
+  background: linear-gradient(135deg, var(--horizon-blue), var(--horizon-bluelight95));
   padding: 0 6px 2px;
 }
 
