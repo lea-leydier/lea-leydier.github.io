@@ -21,7 +21,8 @@
   <link rel="canonical" href="https://lea-leydier.fr/">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
-  <link rel="stylesheet" href="styles.css?v=1.21">
+  <link rel="stylesheet" href="styles.css?v=1.25">
+  <script src="script.js?v=1.0" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -115,7 +116,15 @@
         <div class="author-card">
           <img src="auteur.jpg" alt="Portrait de Léa Leydier" class="author-photo">
           <div class="author-bio">
-            <h2>Léa LEYDIER</h2>
+            <h2>
+              Léa LEYDIER
+              <a href="#contact" title="Contacter l'auteure" class="ext-link" aria-label="Aller à la rubrique contact">
+                <svg xmlns="http://w3.org" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -3px; margin-right: 6px;">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </a>
+            </h2>
             <p class="author-role">Auteure franco-sénégalaise • Journaliste</p>
             <p>Léa LEYDIER est une auteure franco-sénégalaise née en 1992 au Sénégal. Titulaire d'un master en journalisme et communication à Dakar, puis d'un master en affaires publiques, diplomatie et relations internationales à Paris, avec une spécialisation en géopolitique africaine, elle a exercé comme journaliste au Sénégal avant de s'installer en France.</p>
             <p>Son parcours l'a amenée à s'intéresser de près aux réalités sociales, aux migrations et aux enjeux politiques africains. Passionnée de littérature depuis l'enfance, elle fait de l'écriture un espace de réflexion et d'épanouissement. <strong><em>L'immigré Modou-Modou</em></strong> est son premier ouvrage.</p>
@@ -416,7 +425,7 @@
           </div>
           
         </div>
-        <p style="margin-top: 15px;">L'ouvrage est distribué sur le continent africain par <a class="ext-link" target="_blank" href="https://moukat-distribution.com/">Moukat distribution</a>.<br />La disponibilité dans la sous-région est prévue à très brève échéance.</p>
+        <p style="margin-top: 15px;">L'ouvrage est distribué sur le continent africain par <a class="ext-link" target="_blank" href="https://moukat-distribution.com/">Moukat distribution</a>.<br />La disponibilité dans la sous-région est prévue à très brève échéance.<br /><em>Le Bénin et le Cameroun sont actuellement en cours d'approvisionnement.</em></p>
        
       </div>
     </section>
@@ -448,6 +457,15 @@
         </div>
       </div>
     </section>
+    
+    <section class="section-white" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Pour toute question, demande presse ou prise de contact, vous pouvez m'écrire à <span id="contact-auteur"></span>.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -465,80 +483,6 @@
       <iframe id="videoFrame" width="100%" height="100%" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
-
-  <script>
-    const burgerBtn = document.getElementById('burgerBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    burgerBtn.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('active');
-      burgerBtn.setAttribute('aria-expanded', isOpen);
-      burgerBtn.textContent = isOpen ? '✕' : '☰';
-    });
-    
-    function closeMenu() {
-      navLinks.classList.remove('active');
-      burgerBtn.setAttribute('aria-expanded', 'false');
-      burgerBtn.textContent = '☰';
-    }
-    
-    document.addEventListener('click', (event) => {
-      if (!navLinks.contains(event.target) && !burgerBtn.contains(event.target)) {
-        closeMenu();
-      }
-    });
-    
-    navLinks.addEventListener('click', (event) => {
-      if (event.target.closest('a')) {
-        closeMenu();
-      }
-    });
-    
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeMenu();
-    });
-    
-    let resizeTimer;
-
-    window.addEventListener('resize', () => {
-      document.body.classList.add('resize-animation-stopper');
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-          document.body.classList.remove('resize-animation-stopper');
-        }, 400);
-      });
-
-    const modal = document.getElementById('videoModal');
-    const videoFrame = document.getElementById('videoFrame');
-
-    function openVideo(videoUrl, time) {
-      if (!videoUrl) return;
-      var src = videoUrl + "?autoplay=1";
-      if (time) {
-        src+= "&start=" + time;
-      }
-      videoFrame.src = src;
-      modal.classList.add('open');
-    }
-
-    function closeVideo(e) {
-      if (e.target === modal || e.target.classList.contains('close-modal')) {
-        modal.classList.remove('open');
-        videoFrame.src = "";
-      }
-    }
-    
-    function showModal(text) {
-      document.getElementById('modal-text').textContent = text;
-      document.getElementById('info-modal').showModal();
-    }
-    
-    document.getElementById('info-modal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        this.close();
-      }
-    });
-  </script>
 
 </body>
 </html>

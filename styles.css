@@ -94,15 +94,21 @@ header {
   color: var(--primary-amber);
 }
 
-a.ext-link {
+a.ext-link,
+#contact-auteur a {
   color: var(--primary-amber);
   font-weight: 500;
   font-size: 0.95rem;
   transition: color 0.2s ease;
 }
 
- a.ext-link:hover {
+a.ext-link:hover,
+#contact-auteur a:hover {
   color: var(--primary-hover);
+}
+
+#contact-auteur {
+  white-space: nowrap;
 }
 
 .nav-cta {
