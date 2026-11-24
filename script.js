@@ -4,7 +4,7 @@ let burgerBtn, navLinks, videoFrame, modal;
 function closeMenu() {
   navLinks.classList.remove('active');
   burgerBtn.setAttribute('aria-expanded', 'false');
-  burgerBtn.textContent = '?';
+  burgerBtn.textContent = '☰';
 }
 
 function openVideo(videoUrl, time) {
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   burgerBtn.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('active');
     burgerBtn.setAttribute('aria-expanded', isOpen);
-    burgerBtn.textContent = isOpen ? '?' : '?';
+    burgerBtn.textContent = isOpen ? '✕' : '☰';
   });
   
   document.addEventListener('click', (event) => {
