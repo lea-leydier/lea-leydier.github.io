@@ -611,6 +611,7 @@ a.card {
   background: var(--primary-amber);
   color: #fff;
   cursor: pointer;
+  outline: none !important;
 }
 
 #info-modal button:hover {

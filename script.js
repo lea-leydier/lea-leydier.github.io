@@ -9,6 +9,7 @@ function closeMenu() {
 
 function openVideo(videoUrl, time) {
   if (!videoUrl) {
+    showModal('Vidéo non disponible');
     return;
   }
   var src = videoUrl + "?autoplay=1";

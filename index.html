@@ -22,7 +22,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
   <link rel="stylesheet" href="styles.css?v=1.26">
-  <script src="script.js?v=1.1" defer></script>
+  <script src="script.js?v=1.2" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -185,8 +185,19 @@
           </article>
           
           <article class="video-card" onclick="openVideo('')">
-            <div class="thumbnail-wrapper cover" style="--image:url(presse/psf-prime.png)">
+            <div class="thumbnail-wrapper" style="--image:url(presse/bloc-info.jpg)">
               <span class="thumbnail-label right">Replay indisponible</span>
+            </div>
+            <div class="video-info">
+              <span class="media-source">2STV</span>
+              <h3>BLOC INFO</h3>
+              <p>Émission du 16 octobre 2026 (Français)</p>
+            </div>
+          </article>
+          
+          <article class="video-card" onclick="openVideo('https://www.youtube.com/embed/oIBFh1ULzqw')">
+            <div class="thumbnail-wrapper cover" style="--image:url(presse/psf-prime.png)">
+              <div class="play-btn">▶</div>
             </div>
             <div class="video-info">
               <span class="media-source">2STV</span>
@@ -217,9 +228,10 @@
             </div>
           </article>
           
-          <article class="video-card" onclick="openVideo('')">
+          <article class="video-card" onclick="openVideo('https://www.youtube.com/embed/SL_9HO0RZd0')">
             <div class="thumbnail-wrapper cover" style="--image:url(presse/subatel.png)">
-              <span class="thumbnail-label right">Replay indisponible</span>
+              <!-- <span class="thumbnail-label right">Replay indisponible</span> -->
+              <div class="play-btn">▶</div>
             </div>
             <div class="video-info">
               <span class="media-source">SEN TV</span>
